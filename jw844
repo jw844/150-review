@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define MAX_SIZE 500 // decided i didn't want the array to be too huge (unmanageable)
+
+int findMin(int arr[], int size);
+int findMax(int arr[], int size);
+int findSum(int arr[], int size);
+// Add additional function protoypes here
+
+int main() //feels like too many variables
+{
+        int findMax;
+        int findMin;
+        int findSum;
+        int Sum;
+        int Max;
+        int Min;
+        int Avg;
+        int size;
+        int n;
+        int k = 0;
+        int num;
+        int arr[MAX_SIZE];
+
+        srand(time(NULL));
+
+        printf("How many integers, between 0 and 500, would you like generated: ");
+        scanf("%d", &k); // user input
+
+        for (n = 0; n < k; ++n)
+        {
+                arr[n] = rand () % 1000 + 1; //random generated from user input put into the array
+        }
+
+        Max = arr[n]; // maximum in the array
+        for (n = 1; n < k; ++n)
+        {
+                if (arr[n] > Max)
+                        {
+                        Max = arr[n];
+                        }
+        }
+        printf("Max:     %d Pos:     %d", Max, arr[n]);
+        printf("\n");
+
+        Min = arr[n]; // minimum in the array
+        for (n = 1; n < k; ++n)
+        {
+                if (arr[n] < Min)
+                        {
+                        Min = arr[n];
+                        }
+        }
+        printf("Min:     %d Pos:     %d", Min, arr[n]);
+        printf("\n");
+        
+        Sum = Sum + arr[n]; // i'm missing something but need to turn in, sum total in array
+
+        printf("Sum:     %d", Sum);
+        printf("\n");
+
+        Avg = Sum / k;  // missing something same as sum, avg in array
+
+        printf("Avg:     %d", Avg);
+        printf("\n");
+
+        printf("\n Pos  :   Val");
+        printf("\n-------------");
+        
+        for (n = 0; n < k; ++n)
+        {
+                printf("\n   %d  :   %d", n,  arr[n]);
+        }
+        printf("\n");
+
+        return 0;
+}
